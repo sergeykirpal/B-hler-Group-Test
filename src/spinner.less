@@ -1,0 +1,90 @@
+.spinner {
+  width            : 40px;
+  height           : 40px;
+  margin           : 50px auto;
+  background-color : @success;
+  border-radius    : 100%;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation        : sk-scaleout 1s infinite ease-in-out
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0)
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    opacity          : 0
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform        : scale(0)
+  }
+
+  100% {
+    -webkit-transform: scale(1);
+    transform        : scale(1);
+    opacity          : 0
+  }
+}
+
+
+.loader {
+  position: absolute;
+  width   : 100%;
+  z-index : 3;
+}
+
+.loading {
+  position: relative;
+}
+
+.loading::before {
+  backdrop-filter: blur(5px);
+  content        : "";
+  width          : 100%;
+  height         : 100%;
+  position       : absolute;
+  z-index        : 2;
+}
+
+
+.loadingDots:after {
+  content  : ' .';
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow:
+      .25em 0 0 rgba(0, 0, 0, 0),
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  40% {
+    color: white;
+    text-shadow:
+      .25em 0 0 rgba(0, 0, 0, 0),
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  60% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 rgba(0, 0, 0, 0);
+  }
+
+  80%,
+  100% {
+    text-shadow:
+      .25em 0 0 white,
+      .5em 0 0 white;
+  }
+}

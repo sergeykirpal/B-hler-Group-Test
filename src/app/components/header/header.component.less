@@ -1,0 +1,64 @@
+@import "../../../config";
+
+
+.header {
+  display        : flex;
+  justify-content: space-between;
+  align-items    : center;
+  padding        : 16px;
+  background     : @grey;
+  height: 64px;
+
+  .logo {
+    height: 40px;
+    @media screen and (max-width: @xsWidth) {
+      height: 20px;
+    }
+  }
+
+  .items {
+    display: flex;
+
+    @media screen and (max-width: @xsWidth) {
+      flex-direction: column;
+    }
+
+    .item {
+      display    : flex;
+      margin-left: 64px;
+
+      @media screen and (max-width: @bootstrapXsWidth) {
+        margin-left: 8px;
+      }
+
+
+
+
+      span {
+        margin-right: 8px;
+      }
+    }
+  }
+}
+
+.nav {
+  border-top: 4px solid @success;
+  background: @grey;
+  display   : flex;
+
+  @media screen and (max-width: @bootstrapXsWidth) {
+    flex-direction: column;
+    align-items   : center;
+  }
+
+  .item {
+    position: relative;
+    padding : 24px 64px;
+
+    span {
+      position: absolute;
+      right   : 4px;
+      top     : 4px;
+    }
+  }
+}

@@ -1,0 +1,111 @@
+@import "config";
+@import "spinner";
+@import "animation";
+@import "fonts";
+
+html,
+body {
+  font-family   : 'Open Sans', sans-serif;
+  text-rendering: optimizeLegibility;
+  margin        : 0;
+  padding       : 0;
+  overflow      : auto;
+  background    : #fff;
+  color         : @textcolor;
+  font-size     : 16px;
+  height        : 100%;
+}
+
+.customScrollBar {
+  -webkit-overflow-scrolling: touch;
+  touch-action              : auto;
+  -webkit-perspective       : 0;
+}
+
+.customScrollBar::-webkit-scrollbar {
+  width : @webkit-scrollbar-width;
+  height: @webkit-scrollbar-width;
+}
+
+.customScrollBar::-webkit-scrollbar-track {
+  border-radius: @webkit-scrollbar-track-border-radius;
+  background   : @webkit-scrollbar-track-webkit-box-background;
+}
+
+.customScrollBar::-webkit-scrollbar-thumb {
+  border-radius: @webkit-scrollbar-thumb-border-radius;
+  background   : @webkit-scrollbar-thumb-webkit-box-background;
+}
+
+input[type=password]::-ms-reveal,
+input[type=password]::-ms-clear {
+  display: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition        : background-color 1000s ease-in-out 0s !important;
+  -webkit-box-shadow: 0 0 0px 1000px white inset;
+}
+
+.breakline {
+  height: 16px;
+}
+
+.divider {
+  width  : 16px;
+  display: inline-block;
+}
+
+.textCenter {
+  text-align: center;
+}
+
+.marginRight {
+  margin-right: 16px;
+}
+
+.marginLeft {
+  margin-left: 16px;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.removeFocus {
+  outline              : 0;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select  : none;
+  /* Safari */
+  -khtml-user-select   : none;
+  /* Konqueror HTML */
+  -moz-user-select     : none;
+  /* Old versions of Firefox */
+  -ms-user-select      : none;
+  /* Internet Explorer/Edge */
+  user-select          : none;
+}
+
+.error {
+  background: @error !important;
+  color     : #fff;
+}
+
+.warning {
+  background: @warning !important;
+  color     : #fff;
+}
+
+.content {
+  width : 100%;
+  height: ~"calc(100% - 170px)";
+  overflow: auto;
+
+  @media screen and (max-width: @bootstrapXsWidth) {
+    height: ~"calc(100% - 378px)";
+  }
+}

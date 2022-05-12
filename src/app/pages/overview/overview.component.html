@@ -1,0 +1,14 @@
+<app-header class="fadeIn"></app-header>
+
+<div class="content customScrollBar fadeIn">
+  <div class="nav">
+    <ng-container *ngFor="let item of state.nav;index as key">
+      <div class="item fadeIn {{item.status}}">
+        <span class="material-icons status">{{item.status}}</span>
+        <span class="material-icons icon">{{item.icon}}</span>
+        <div class="name">{{item.name}}</div>
+      </div>
+      <div class="line fadeIn" *ngIf="key < state.nav.length -1"></div>
+    </ng-container>
+  </div>
+</div>

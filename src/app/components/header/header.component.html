@@ -1,0 +1,27 @@
+<div class="header">
+  <img class="logo" src="assets/logo.png" />
+  <div class="items">
+    <div class="item">
+      <span class="material-icons">
+        schedule
+      </span>
+      <div>
+        {{state.currentTime}}
+      </div>
+    </div>
+    <div class="item">
+      <span class="material-icons">
+        account_circle
+      </span>
+      <div>
+        Operator
+      </div>
+    </div>
+  </div>
+</div>
+<div class="nav">
+  <div class="item {{item.status}} fadeIn" *ngFor="let item of state.nav">
+    <span class="material-icons">{{item.status}}</span>
+    {{item.name}}
+  </div>
+</div>
